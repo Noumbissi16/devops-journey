@@ -24,4 +24,4 @@ jobs:
                 push: true
                 tags: |
                     noumbissi16/devops-journey:k8s-spring-0.0.1
-                    noumbissi16/devops-journey:k8s-spring-{{ github.sha }}
+                    noumbissi16/devops-journey:k8s-spring-${{ github.sha }}
