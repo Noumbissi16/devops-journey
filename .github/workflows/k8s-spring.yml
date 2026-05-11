@@ -9,4 +9,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Run docker build
-              run: echo "Building Docker image..."
+              run: |
+                  docker build -t noumbissi16/devops-journey:k8s-spring-0.0.1 ./k8s-spring-boot/demo
+            - name: Push Docker image to repository
+              run: |
+                  docker push noumbissi16/devops-journey:k8s-spring-0.0.1
