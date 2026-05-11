@@ -1,0 +1,12 @@
+name: Action to deploy Spring Boot app to Kubernetes
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+    build:
+        name: Build and push Docker image to repository
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run docker build
+              run: echo "Building Docker image..."
