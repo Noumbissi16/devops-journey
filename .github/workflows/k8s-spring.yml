@@ -8,9 +8,18 @@ jobs:
         name: Build and push Docker image to repository
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout source code
+              uses: actions/checkout@v4
+
             - name: Run docker build
-              run: |
-                  docker build -t noumbissi16/devops-journey:k8s-spring-0.0.1 ./k8s-spring/demo
-            - name: Push Docker image to repository
-              run: |
-                  docker push noumbissi16/devops-journey:k8s-spring-0.0.1
+              uses: docker/build-push-action@v6
+              with:
+                context: ./k8s-spring/demo
+                push: true
+                tags: noumbissi16/devops-journey:k8s-spring-0.0.1
+            #   run: |
+            #       docker build -t noumbissi16/devops-journey:k8s-spring-0.0.1 ./k8s-spring/demo
+
+            # - name: Push Docker image to repository
+            #   run: |
+            #       docker push noumbissi16/devops-journey:k8s-spring-0.0.1
