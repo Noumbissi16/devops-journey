@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: spring-boot-demo-ingress
+spec:
+  ingressClassName: spring-boot-demo
+  rules:
+    - host: devops-journey.staelnoumbissi.online 
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: spring-boot-demo-service
+                port:
+                  number: 8080
+
